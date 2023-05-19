@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jumanji: Welcome to the Jungl</title>
+    <!--Link To CSS-->
+    <link rel="stylesheet" href="style.css">
+    <!--Fav Icon-->
+    <link rel="shortcut icon" href="img/fav-icon.png" type="image/x-icon">
+    <!--Box Icons -->
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    
+    <title>Widget</title>
+    <style>
+        .widget-container {
+            width: 300px;
+            height: 400px;
+            border: 1px solid #ccc;
+            padding: 10px;
+            overflow-y: auto;
+        }
+
+        .comment {
+            margin-bottom: 10px;
+            padding: 5px;
+            border: 1px solid #ccc;
+        }
+
+        .comment .username {
+            font-weight: bold;
+        }
+
+        .comment .date {
+            font-size: 0.8em;
+            color: #999;
+        }
+
+        .comment .content {
+            margin-top: 5px;
+        }
+
+        .form-container {
+            margin-top: 10px;
+        }
+
+        .form-container input[type="text"],
+        .form-container textarea {
+            width: 100%;
+            margin-bottom: 5px;
+        }
+
+        .form-container input[type="submit"] {
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            padding: 5px 10px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <!-- Nav -->
+        <div class="nav container">
+            <!-- Logo -->
+            <a href="index.html" class="logo">
+                Movie<span>Hub</span>
+            </a>
+            <!-- Search Box -->
+            <div class="search-box">
+                <input type="search" name="" id="search-input" placeholder="Search movie">
+                <i class='bx bx-search'></i>
+            </div>
+            <!-- User -->
+            <a href="#" class="user">
+                <img src="#" alt="" class="user-img">
+            </a>
+            <!-- NavBar -->
+            <div class="navbar">
+                <a href="index.html" class="nav-link nav-active">
+                    <i class='bx bx-home-heart'></i>
+                    <span class="nav-link-title">Home</span>
+                </a>
+                <a href="favorite.html" class="nav-link">
+                    <i class='bx bxs-heart' ></i>
+                    <span class="nav-link-title">Favorite</span>
+                </a>
+                <a href="movies.html" class="nav-link">
+                    <i class='bx bxs-camera-movie' ></i>
+                    <span class="nav-link-title">Movies</span>
+                </a>
+                <a href="tv-shows.html" class="nav-link">
+                    <i class='bx bx-tv' ></i>
+                    <span class="nav-link-title">Tv shows</span>
+                </a>
+                <a href="about.html" class="nav-link">
+                    <i class='bx bxs-info-circle'></i>
+                    <span class="nav-link-title">About Us</span>
+                </a>
+                <a href="comments.html" class="nav-link">
+                    <i class='bx bxs-comment'></i>
+                    <span class="nav-link-title">Comment Section</span>
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <div class="widget-container">
+        <div class="comments-container"></div>
+        <div class="form-container">
+            <input type="text" id="username" placeholder="Kullanıcı Adı" />
+            <input type="text" id="datepicker" placeholder="Date" />
+            <input type="text" id="moviename" placeholder="Movie" />
+            <textarea id="comment" placeholder="Yorum"></textarea>
+            <input type="submit" id="submit" value="Gönder" />
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://code.jquery.com/ui/1.13.0/jquery-ui.min.js"></script>  
+    <script src="script.js"></script>
+              
+    <!-- Copyright -->
+    <div class="copyright">
+        <p>&#169; Klajoe All Rights Reserved</p>
+    </div>
+
+</body>
+</html>
