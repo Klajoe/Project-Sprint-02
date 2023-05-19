@@ -118,6 +118,43 @@
             <input type="submit" id="submit" value="Gönder" />
         </div>
     </div>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            var movieNameInput = document.getElementById('moviename');
+            var movieList = ['Batman', 'Tenet', 'Lucy'];
+            var dropdownList = null;
+    
+            movieNameInput.addEventListener('click', function () {
+                if (!dropdownList) {
+                    dropdownList = document.createElement('ul');
+                    dropdownList.classList.add('dropdown-list');
+    
+                    movieList.forEach(function (movie) {
+                        var listItem = document.createElement('li');
+                        listItem.textContent = movie;
+    
+                        listItem.addEventListener('click', function () {
+                            movieNameInput.value = movie;
+                            dropdownList.style.display = 'none';
+                        });
+    
+                        dropdownList.appendChild(listItem);
+                    });
+    
+                    movieNameInput.parentNode.appendChild(dropdownList);
+                } else {
+                    dropdownList.style.display = 'block';
+                }
+            });
+    
+            document.addEventListener('click', function (event) {
+                if (event.target !== movieNameInput && event.target.parentNode !== dropdownList) {
+                    dropdownList.style.display = 'none';
+                }
+            });
+        });
+    </script>
+    
 
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="https://code.jquery.com/ui/1.13.0/jquery-ui.min.js"></script>  
