@@ -415,3 +415,51 @@ header{
     border: 1px solid #ccc;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
+
+.rcontainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+  }
+  
+  .rform-container {
+    width: 400px;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+  }
+  
+  .rform-container h2 {
+    text-align: center;
+  }
+  
+  .rform-container input[type="text"],
+  .rform-container input[type="email"],
+  .rform-container input[type="password"],
+  .rform-container input[type="date"] {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    box-sizing: border-box;
+  }
+  
+  .rform-container input[type="password"] {
+    font-family: "Arial", sans-serif;
+  }
+  
+  .rform-container button[type="submit"] {
+    width: 100%;
+    padding: 12px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+  }
+  
+  /* Diğer stillendirme kuralları burada devam eder */
+  
+  
