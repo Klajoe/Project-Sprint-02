@@ -1,0 +1,32 @@
+{
+  "movies": [
+    {
+      "title": "Batman Begins",
+      "genre": "Action",
+      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+      "image": "img/favori-movie.png",
+      "imdbId": "1"
+    },
+    {
+      "title": "The Dark Knight",
+      "genre": "Action",
+      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+      "image": "img/dark-knight.png",
+      "imdbId": "2"
+    },
+    {
+      "title": "Hannibal Rising",
+      "genre": "Horror/Mystery",
+      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+      "image": "img/hannibal.png",
+      "imdbId": "3"
+    },
+    {
+      "title": "John Wick 2",
+      "genre": "Action",
+      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+      "image": "img/john.png",
+      "imdbId": "4"
+    }
+  ]
+}
