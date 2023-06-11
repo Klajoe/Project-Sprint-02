@@ -32,8 +32,8 @@ $(document).ready(function() {
                 // Perform a GET request to search for YouTube videos related to the movie
                 $.get("https://www.googleapis.com/youtube/v3/search", {
                     part: 'snippet',
-                    maxResults: 3,
-                    q: movieInfo.title + " clip",  // Search query for movie clips
+                    maxResults: 1,
+                    q: movieInfo.title + " trailer",  // Search query for movie trailer
                     key: apiKey  // Use the YouTube Data API key
                 }, function(data) {
                     // Iterate over the retrieved video items
