@@ -18,23 +18,23 @@ $(document).ready(function() {
                 var genre = $("<span>").addClass("movie-type").text(movieInfo.genre);
                 var description = $("<p>").text(movieInfo.description);
                 
-                // Create the IMDb button
-                var imdbButton = $("<button>").text("Trailer").addClass("imdb-btn");
+                // Create the youtube button
+                var youtubeButton = $("<button>").text("Trailer").addClass("youtube-btn");
 
                 // Clear the movie content
                 $(".movie-content").empty();
 
                 // Append the elements to the movie content
-                $(".movie-content").append(image, title, genre, description, imdbButton);
+                $(".movie-content").append(image, title, genre, description, youtubeButton);
 
-                // Click event handler for IMDb button
-                imdbButton.one("click", function() {
-                    var imdbUrl = getImdbUrl(movieInfo.imdbId);
-                    if (imdbUrl) {
-                        // Open the IMDb link in a new tab
-                        window.open(imdbUrl, "_blank");
+                // Click event handler for youtube button
+                youtubeButton.one("click", function() {
+                    var youtubeUrl = getyoutubeUrl(movieInfo.youtubeId);
+                    if (youtubeUrl) {
+                        // Open the youtube link in a new tab
+                        window.open(youtubeUrl, "_blank");
                     } else {
-                        console.log("IMDb URL not found for movie ID: " + movieInfo.imdbId);
+                        console.log("youtube URL not found for movie ID: " + movieInfo.youtubeId);
                     }
                 });
             },
@@ -45,9 +45,9 @@ $(document).ready(function() {
         });
     });
 
-    // Function to get IMDb URL based on movie ID
-    function getImdbUrl(imdbId) {
-        switch (imdbId) {
+    // Function to get youtube URL based on movie ID
+    function getyoutubeUrl(youtubeId) {
+        switch (youtubeId) {
             case "1":
                 return "https://www.youtube.com/watch?v=neY2xVmOfUM";
             case "2":

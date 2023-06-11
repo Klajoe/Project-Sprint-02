@@ -5,28 +5,28 @@
       "genre": "Action",
       "description": "The origins of the Batman legend and the Dark Knight's emergence as a force for good in Gotham City.",
       "image": "img/favori-movie.png",
-      "imdbId": "1"
+      "youtubeId": "1"
     },
     {
       "title": "The Dark Knight",
       "genre": "Action",
       "description": "Batman teams up with Commissioner Gordon and the new District Attorney to take on a psychotic bank robber known as The Joker.",
       "image": "img/dark-knight.png",
-      "imdbId": "2"
+      "youtubeId": "2"
     },
     {
       "title": "Hannibal Rising",
       "genre": "Horror/Mystery",
       "description": "The story of Hannibal Lecter's early years and his transformation into a serial killer.",
       "image": "img/hannibal.png",
-      "imdbId": "3"
+      "youtubeId": "3"
     },
     {
       "title": "John Wick 2",
       "genre": "Action",
       "description": "John Wick is forced out of retirement and embarks on a mission to take down the world's deadliest assassins.",
       "image": "img/john.png",
-      "imdbId": "4"
+      "youtubeId": "4"
     }
   ]
 }
