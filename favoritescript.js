@@ -1,63 +1,53 @@
 $(document).ready(function() {
-    // Click event handler for movie buttons
-    $(".watch-btn").click(function(e) {
-        e.preventDefault(); // Prevent the default button behavior
-        
-        var movieId = $(this).attr("data-movie-id"); // Get the movie ID from the data-movie-id attribute
+    // API key for accessing the YouTube Data API
+    var apiKey = "AIzaSyAjukXlF88QE6xJU0saPNgdglbeb0c5-P4";
 
-        // Make an AJAX request to retrieve the movie information from the JSON file
+    // When a button with class "watch-btn" is clicked
+    $(".watch-btn").click(function(e) {
+        e.preventDefault();  // Prevent the default action of the button
+
+        // Get the movie ID from the clicked button's data attribute
+        var movieId = $(this).attr("data-movie-id"); 
+
+        // Retrieve movie information from a JSON file using Ajax
         $.ajax({
             url: "movies.json",
             dataType: "json",
             success: function(data) {
-                var movieInfo = data.movies[movieId - 1]; // Get the movie info based on the movie ID
+                // Extract the movie information based on the movie ID
+                var movieInfo = data.movies[movieId - 1]; 
 
                 // Create HTML elements to display the movie information
                 var image = $("<img>").attr("src", movieInfo.image);
                 var title = $("<h2>").text(movieInfo.title);
                 var genre = $("<span>").addClass("movie-type").text(movieInfo.genre);
                 var description = $("<p>").text(movieInfo.description);
-                
-                // Create the youtube button
-                var youtubeButton = $("<button>").text("Trailer").addClass("youtube-btn");
 
-                // Clear the movie content
+                // Clear the existing movie content
                 $(".movie-content").empty();
 
-                // Append the elements to the movie content
-                $(".movie-content").append(image, title, genre, description, youtubeButton);
+                // Append the movie information elements to the movie content container
+                $(".movie-content").append(image, title, genre, description);
 
-                // Click event handler for youtube button
-                youtubeButton.one("click", function() {
-                    var youtubeUrl = getyoutubeUrl(movieInfo.youtubeId);
-                    if (youtubeUrl) {
-                        // Open the youtube link in a new tab
-                        window.open(youtubeUrl, "_blank");
-                    } else {
-                        console.log("youtube URL not found for movie ID: " + movieInfo.youtubeId);
-                    }
+                // Perform a GET request to search for YouTube videos related to the movie
+                $.get("https://www.googleapis.com/youtube/v3/search", {
+                    part: 'snippet',
+                    maxResults: 3,
+                    q: movieInfo.title + " clip",  // Search query for movie clips
+                    key: apiKey  // Use the YouTube Data API key
+                }, function(data) {
+                    // Iterate over the retrieved video items
+                    data.items.forEach(function(item){
+                        // Create a video container div and embed the YouTube video using iframe
+                        var videoDiv = $("<div></div>");
+                        videoDiv.append("<iframe src='https://www.youtube.com/embed/" + item.id.videoId + "'></iframe>");
+                        $(".movie-content").append(videoDiv);
+                    });
                 });
             },
             error: function() {
                 console.log("Error loading movie information.");
             }
-            
         });
     });
-
-    // Function to get youtube URL based on movie ID
-    function getyoutubeUrl(youtubeId) {
-        switch (youtubeId) {
-            case "1":
-                return "https://www.youtube.com/watch?v=neY2xVmOfUM";
-            case "2":
-                return "https://www.youtube.com/watch?v=EXeTwQWrcwY";
-            case "3":
-                return "https://www.youtube.com/watch?v=NCCFleJPTAU";
-            case "4":
-                return "https://www.youtube.com/watch?v=XGk2EfbD_Ps";
-            default:
-                return "";
-        }
-    }
 });
